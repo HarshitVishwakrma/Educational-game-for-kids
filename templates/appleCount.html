@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/appleCount.css">
+    <script src="../static/js/appleCount.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Number Counting</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Count the apples</h1>
+        <div id="instructions"></div>
+        <button class="btn" id="start">Start Game</button>
+
+        <div class="page1">
+            <div class="pagecontent">
+                <div id="OuterappleBox">
+                    <div id="InnerappleBox"></div>
+                </div>
+                <div id="rightbox">
+                    <div class="time">Timer: <h3 id="Timerval"></h3>
+                    </div>
+                    <div class="box" id="scoreBox">Score: <h3 id="scoreCount"></h3>
+                    </div>
+                    <div>
+                        <audio id="audio">
+                            <source src="../static/assets/appleCount/Sound/background.mp3" type="audio/mpeg">
+                        </audio>
+
+                        <button class="btns" id="playPauseBTN" onclick="playPause()">Play ►</button>
+                        <button class="btns1" onclick="stop()">Stop ▋</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="optionContainer">
+                <h3>Options</h3>
+                <div class="options" id="1"></div>
+                <div class="options" id="2"></div>
+                <div class="options" id="3"></div>
+            </div>
+        </div>
+
+        <div id="gameover" style="display: none;">
+            <button id="butn">
+                New Game
+            </button>
+            <div id="scoreDisplay">Score: <span id="scoreCount">0</span></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

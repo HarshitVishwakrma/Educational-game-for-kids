@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/FlipTheCard.css"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="parent">
+    <!--Left Aside box-->
+    <div class="left-aside">
+        <div class="aside-head">
+            <h3>Memorize Game</h3>
+        </div>
+
+        <div class="player-box">
+            <h4 class="p-name">Sourabh</h4>
+            <div class="aside-pfp">
+                <a href="" class="pfp disable-link">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPeID0cKXjlkMjVjk1HNN3DM5_d_Z-IMxq-SM6Ib4LwTbMYUXTzGko6Hq679sQhJmMPZ4&usqp=CAU"
+                         alt="pfp"/>
+                    <!-- Put a profile photo here-->
+                </a>
+                <a href="" class="trophy  disable-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Circle-icons-trophy.svg/768px-Circle-icons-trophy.svg.png"
+                         alt="trophy"/>
+                    <!-- Put the trophy image here-->
+                </a>
+            </div>
+        </div>
+
+
+        <div class="start_game">
+            <button id="startGame">Start</button>
+        </div>
+
+        <div class="extra-box">
+            <a href="#"><img src="../static/assets/FlipTheCards/Images/background/pngwing.com.png" onclick="toggleCard('questionCard')" alt=""/>
+                <div class="popup-card" id="questionCard">
+                    <h2>How to Play</h2>
+                    <ol>
+                        <li>Step 1: Click on the "Start" button to begin the game.</li>
+                        <li>Step 2: All cards will be revealed with images.</li>
+                        <li>Step 3: Memorize the images until the time runs out.</li>
+                        <li>Step 4: After the timeout, the cards will flip, and a question will appear.</li>
+                        <li>Step 5: Click on the numbered card corresponding to the image shown in the question.</li>
+                        <li>Step 6: If your answer is correct, you win!</li>
+                    </ol>
+                    <button onclick="toggleCard('questionCard')">Close</button>
+                  </div>
+                
+            </a>
+            <a href="#" id="PlayPauseMusic"><img
+                    src="../static/assets/FlipTheCards/Images/background/kisspng-computer-icons-clip-art-vector-graphics-portable-n-sound-off-svg-png-icon-free-download-4-8272-o-5cc7d32e5d0f07.7813715915565995983812.png"
+                    alt=""
+            /></a>
+            <a href="#" id="refreshButton" style="background: transparent;"><img
+                    src="../static/assets/FlipTheCards/Images/background/door.png"
+                    alt=""
+            /></a>
+        </div>
+    </div>
+
+    <div class="right-aside">
+        <div class="scoreCard" id="scoreCard">
+        <h2>You completed All levels!</h2>
+        <p>Score :  <span id="scoreCardScore"></span></p>
+        <button onclick="playAgain(event, 'scoreCard')">Okay</button>
+      </div>
+        <div class="header">
+            <div class="timer">
+                <span>Timer:</span>
+                <span id="timer"></span>
+            </div>
+
+            <div class="score">
+                <span>Score:</span>
+                <span id="currentScore">0</span>
+            </div>
+
+            <div class="highScore">
+                <span>HighScore:</span>
+                <span id="Highscore">0</span>
+            </div>
+        </div>
+
+        <div class="Mainbody">
+            <div class="PlayArea">
+                <div class="questionGenerate">
+                    <span class="question">Guess the Image?👀</span>
+                    <span class="question_image">
+                <img src='' alt="Guess The image"/>
+              </span>
+                </div>
+                <div class="cardArea">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/FlipTheCards.js"></script>
+</body>
+</html>

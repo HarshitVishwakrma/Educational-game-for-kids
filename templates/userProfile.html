@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamer Profile</title>
+    <link rel="stylesheet" href="../static/css/userProfile.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="profile">
+        <h1>User Profile</h1>
+        <div id="container">
+          <div id="userProfileLeft">
+            <h3>Player-Name: {{user.name}}</h3>
+            <h3>Email Id: {{user.email}}</h3>
+          </div>
+          <div id="userProfileRight">
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </div>
+        <div class="table">
+          <h2>Previous Games record</h2>
+          <div class="scrollable-table">
+            <table id="previous-games-table">
+              <thead>
+                <tr>
+                  <th>Game</th>
+                  <th>Score</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody style="overflow-y: scroll; height: 100px">
+                {% for data in user.history %}
+                <tr>
+                  <td>{{data.gameName}}</td>
+                  <td>{{data.score}}</td>
+                  <td>{{data.date}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('logoutBtn').addEventListener('click', ()=>{
+        location.href = 'http://localhost:3000/logout'
+      })
+    </script>
+  </body>
+</html>

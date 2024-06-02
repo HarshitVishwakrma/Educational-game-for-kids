@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+background-image: url(../assets/loginAndSignup/Image/10243685.jpg);
+background-size: cover;
+background-position: center;
+height:650px; 
+width: 1200px; 
+background-color: #f0f0f0; 
+color: #fff; 
+padding: 20px; 
+position: relative;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+ }
+ .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    margin-left: 300px;
+    
+ }
+
+ .giraffe-img{
+    height: 95px;
+    width: 95px;
+    margin-left: 160px;
+    padding:0%;
+    padding-top: px;
+    
+ }
+ .box {
+    background: hsla(80, 57%, 62%, 0.63);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 15px;
+    border: 5px solid rgba(36, 184, 63, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);    
+    background-clip: padding-box;
+}
+
+ .form-box{
+    width: 450px;
+    margin: 0px 10px;
+    height: 680px;
+    margin-bottom: 2px;
+
+ }
+ .form-box h1{
+    justify-items: center;
+    font-family: cursive;
+    margin-left: 100px;
+    font-size: 18px;
+    color: rgb(25, 183, 131);
+    margin-top: 15px;
+
+
+ }
+ .form-box form .field-input,
+.form-box form .field-password {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    
+}
+.form-box form .field-input input,
+.form-box form .field-email input,
+.form-box form .field-password input,
+.form-box form .field-passwordconfirm input {
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    padding: 0 5px;
+    border-radius: 7px;
+    background: hsla(60, 100%, 100%, 0.63);
+    border: none; 
+    outline: none; 
+    font-family: cursive ;
+}
+
+.form-box form .field-input input,
+.form-box form .field-email input,
+.form-box form .field-password input,
+.form-box form .field-passwordconfirm input,
+.form-box form .field-input label,
+.form-box form .field-email label,
+.form-box form .field-password label,
+.form-box form .field-passwordconfirm label {
+    margin-bottom: 10px; 
+    font-family: cursive;
+    font-size: 21px;
+}
+
+
+.form-box form .field-input,
+.form-box form .field-email,
+.form-box form .field-password,
+.form-box form .field-passwordconfirm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.form-box form .field-input label,
+.form-box form .field-email label,
+.form-box form .field-password label,
+.form-box form .field-passwordconfirm label {
+    margin-bottom: 5px;
+    color: goldenrod;
+}
+.signup input{
+    height: 43px;
+    width: 24%;
+    color: rgb(62, 136, 57);
+    background-color: rgb(64, 200, 91);
+    font-family: cursive;
+    font-size: 20px;
+    justify-content: center;
+    border-radius:13px ;
+    margin-left: 155px;
+    margin-bottom: 0px;
+    outline: none;
+    border: 2px solid rgb(116, 226, 43);
+    box-shadow: 20px;
+    margin-top: 15px;
+}
+.links a{
+    text-decoration: none;
+    color: rgb(101, 169, 62);
+    margin-top: 3px;
+}
+.submit input{
+    height: 43px;
+    width: 23%;
+    color: rgb(62, 136, 57);
+    background-color: rgb(64, 200, 91);
+    font-family: cursive;
+    font-size: 20px;
+    justify-content: center;
+    border-radius:13px ;
+    margin-left: 155px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 2px solid rgb(116, 226, 43);
+    box-shadow: 20px;
+}
+

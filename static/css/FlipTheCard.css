@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "bubblegum sans", "sans";
+  background-color: rgb(122, 198, 241);
+}
+
+.parent {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../assets/FlipTheCards/Images/background/game2.jpg);
+  display: flex;
+  font-family: inherit;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left-aside {
+  width: 20%;
+  height: 100%;
+}
+
+.right-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 1.2rem;
+  height: 12%;
+  width: 75%;
+  font-size: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  border-radius: 2.4rem;
+  background-color: rgba(255, 255, 255, 0.259);
+  backdrop-filter: blur(5px);
+}
+
+.PlayArea {
+  margin: 2.4rem;
+  border-radius: 2.4rem;
+  background-color: rgba(255, 255, 255, 0.259);
+  backdrop-filter: blur(5px);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionGenerate {
+  width: 80%;
+  height: 15%;
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 0;
+  /* background-color: rosybrown; */
+}
+
+.question {
+  font-size: 4.2rem;
+}
+
+.question_image {
+  margin-left: 2.4rem;
+}
+
+.cardArea {
+  /*border: 5px solid black;*/
+  height: 100%;
+  width: 100%;
+  display: grid;
+  /*grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));*/
+  gap: 1rem;
+  padding: 2rem;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  overflow: auto;
+  font-family: "bubblegum sans", "Rubik", sans-serif;
+  /* overflow: hidden; */
+}
+
+.Mainbody {
+  height: 85vh;
+  width: 80vw;
+  position: relative;
+  overflow: hidden;
+  /* background-color: blue; */
+  /* background: transparent; */
+}
+
+/* Left Aside Section */
+
+.left-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aside-head {
+  font-size: 3rem;
+  padding: 3rem 0;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.player-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  padding: 1.5rem;
+  margin-top: 5rem;
+  background-color: white;
+  border-radius: 2rem;
+  margin-bottom: 5.2rem;
+  .p-name {
+    font-size: 2rem;
+  }
+
+  .aside-pfp {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+
+    a img {
+      height: 7rem;
+      width: 7rem;
+    }
+  }
+}
+
+.difficulty-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 5rem 0;
+  width: 80%;
+  border-radius: 1rem;
+
+  h4 {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+
+  .modes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    padding-bottom: 1rem;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .d1 {
+      height: 5rem;
+      width: 5rem;
+      border: 2px solid grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+      }
+    }
+
+    .easy {
+      background-color: green;
+    }
+
+    .medium {
+      background-color: yellow;
+    }
+
+    .hard {
+      background-color: red;
+    }
+  }
+}
+
+.extra-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  padding: 1.5rem;
+  border-radius: 2rem;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.popup-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.8rem 2.4rem;
+  background-color: #f8f8f8;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 20px;
+  text-align: center;
+  height: 52vh;
+  width: 48vw;
+}
+
+.popup-card.show {
+  display: block;
+}
+
+h2 {
+  color: #333;
+  font-size: 3.4rem;
+  padding-bottom: 1.2rem;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+ol {
+  text-align: left;
+  padding-bottom: 1.2rem;
+  list-style-type: none;
+}
+
+li {
+  color: #888;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-button:hover {
+  color: #555;
+}
+
+.flip-card {
+  background-color: transparent;
+  /* width: 190px; */
+  /* height: 254px; */
+  perspective: 1000px;
+  font-family: sans-serif;
+  /* margin: 1rem; */
+}
+
+.title {
+  font-size: 8.2em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  font-family: inherit;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border: 4px solid coral;
+  border-radius: 1rem;
+  font-family: inherit;
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 0.6rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(
+    120deg,
+    bisque 60%,
+    rgb(255, 231, 222) 88%,
+    rgb(255, 211, 195) 40%,
+    rgba(255, 127, 80, 0.603) 48%
+  );
+  color: coral;
+}
+
+.flip-card-back {
+  background: linear-gradient(
+    120deg,
+    rgb(255, 174, 145) 30%,
+    coral 88%,
+    bisque 40%,
+    rgb(255, 185, 160) 78%
+  );
+  color: white;
+  transform: rotateY(180deg);
+  background-image: url("assets/child/ (1).png");
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flip-card.flipped .flip-card-front {
+  visibility: hidden;
+}
+
+.start_game {
+  margin-bottom: 8rem;
+}
+
+.start_game button {
+  padding: 1.2rem 2.4rem;
+  border-radius: 4.8px;
+  font-family: inherit;
+  background-color: white;
+  color: darkgreen;
+  font-size: 1.8rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.question_image img {
+  height: 6.4rem;
+  border-radius: 50%;
+  padding: 1.2rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.start_game button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid white;
+}
+
+.scoreCard {
+ 
+  max-width: 300px;
+  min-height: 200px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 36%;
+  left: 43%;
+
+  z-index: 1;
+
+  max-width: 500px;
+  height: 300px;
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+}
+
+.scoreCard h2 {
+  margin-bottom: 2rem;
+}
+
+.scoreCard p{
+    font-size: 2.3rem;
+    text-align: center;
+    margin-right: 3rem;
+}
+
+.scoreCard button{
+    margin-top: 2rem;
+}

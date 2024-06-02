@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamer Profile</title>
+    <link rel="stylesheet" href="../static/css/userProfile.css" />
+    <style>
+      .star-progress-bar {
+        display: flex;
+        align-items: center;
+      }
+      .star {
+        width: 20px;
+        height: 20px;
+        background-color: gold;
+        margin-right: 3px;
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          100% 35%,
+          68% 57%,
+          79% 100%,
+          50% 70%,
+          21% 100%,
+          32% 57%,
+          0% 35%,
+          39% 35%
+        );
+      }
+      .star.blank {
+        background-color: transparent;
+        border: 7px solid white;
+        color: black;
+      }
+      @media (max-width: 768px) {
+        .star {
+          width: 3vw;
+          height: 3vw;
+        }
+        .star-progress-bar {
+          font-size: 4vw; /* Adjust font size for smaller screens */
+        }
+        .star.blank {
+          background-color: transparent;
+          border: 5px solid white;
+        }
+      }
+      #userProfileRight {
+        position: absolute;
+        right: 2%;
+        top: 4%;
+      }
+      #userProfileLeft {
+        position: absolute;
+        left: 2%;
+        top: 4%;
+      }
+      #logoutBtn {
+        padding: 0.5rem;
+        background-color: rgb(203 110 110);
+        font-size: large;
+        border-radius: 13px;
+      }
+      #backBtn {
+        padding: 0.5rem;
+        background-color: rgb(133, 139, 221);
+        font-size: large;
+        border-radius: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="userProfileLeft">
+        <button id="backBtn">back</button>
+      </div>
+      <div id="userProfileRight">
+        <button id="logoutBtn">Logout</button>
+      </div>
+      <div class="profile">
+        <div class="upper">
+          <div class="left">
+            <h1>User Profile</h1>
+            <h3>Player-Name: {{user.name}}</h3>
+            <h3>Email Id: {{user.email}}</h3>
+          </div>
+
+          <div class="right">
+            <h2>Progress According to stars rating</h2>
+            <ol>
+              <li>1 Star: "Needs Improvment"</li>
+              <li>2 Star: "Below Average</li>
+              <li>3 Stars: "Average Experience"</li>
+              <li>4 Stars: "Above Average"</li>
+              <li>5 Stars: "Exceptional Perfomance"</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="table">
+          <h2>Previous Games record</h2>
+          <div class="scrollable-table">
+            <table id="previous-games-table">
+              <thead>
+                <tr>
+                  <th>Game</th>
+                  <th>Progress</th>
+                  <th>Score</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody style="overflow-y: scroll; height: 100px">
+                {% for data in user.history %}
+                <tr>
+                  <td>{{data.gameName}}</td>
+                  <td class="stars-cell"></td>
+                  <td class="score-cell">{{data.score}}</td>
+                  <td>{{data.date}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        location.href = "http://localhost:3000/logout";
+      });
+
+      document.getElementById('backBtn').addEventListener('click', ()=>{
+        location.href = "http://localhost:3000"
+      })
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var scoreCells = document.querySelectorAll(".score-cell");
+        scoreCells.forEach(function (cell) {
+          var score = parseInt(cell.textContent);
+          var stars = "";
+          for (var i = 0; i < 5; i++) {
+            if (i < score / 20) {
+              stars += '<div class="star"></div>';
+            } else {
+              stars += '<div class="star blank"></div>';
+            }
+          }
+          var starsCell = cell.previousElementSibling;
+          starsCell.innerHTML =
+            '<div class="star-progress-bar">' + stars + "</div>";
+        });
+      });
+    </script>
+  </body>
+</html>

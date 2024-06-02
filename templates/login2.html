@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Document</title>
+</head>
+<body>
+   
+<div class="container">
+    <div class="box form-box">
+    <img class="giraffe-img"  src="../static/assets/loginAndSignup/Image/oi9k_apfr_230703.png" alt="baby giraffe">
+    <h1>Login</h1>
+    <form class="form1" action="/login" method="post">
+        {{form.hidden_tag()}}
+        {{form.csrf_token(id="unique_id")}}
+        <div class="field-input">
+            {{form.email.label(for="email")}}
+            {{form.email(id="email", placeholder="Enter your email")}}
+        </div>
+
+        <div class="field-password">
+            {{form.password.label(for="password")}}
+            {{form.password(id="password", placeholder="enter your password")}}
+        </div>
+
+       <div class="checkbox">
+        <input type="checkbox" id="remember" name="remember">
+  <label for="remember">Remember Me</label><br><br>
+       </div>
+       <div class="submit">
+        {{form.submit()}}
+       </div>
+       <div class="links">
+    <p>Don't have an account yet? <a href="http://localhost:3000/signup">Create one</a></p>
+       </div>
+</div>
+</div>
+
+</body>
+</html>

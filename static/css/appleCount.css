@@ -1,0 +1,299 @@
+@font-face {
+    font-family: bora;
+    src: url("../fonts/appleCount/crunch3d.ttf");
+}
+@font-face {
+    font-family: bora1;
+    src: url(../fonts/appleCount/Magic\ Sound.ttf);
+}
+@font-face {
+    font-family: bora2;
+    src: url(../fonts/appleCount/Hey\ Comic.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/appleCount/image/garden.jpg);
+     /* Adjust background properties as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:rgb(94, 21, 21);
+}
+#instructions{
+    font-size: 2vw;
+    margin-left: 15vw;
+    color:rgb(4, 112, 1);
+    font-family: bora2;
+}
+.btn{
+    font-size: 2vw;
+    padding: 1vw 3vw;
+    border: none;
+    border-radius: 1vw;
+    background-color: bisque;
+    margin-left: 15vw;
+    margin-block-start: 3vw;
+    transition: background-color 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    box-shadow 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    transform 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    color 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    font-family: bora1;
+
+}
+.btn:hover {
+    background-color: rgb(94, 21, 21);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05) rotate(9deg); /* Slight rotation added */
+    color: #fff;
+    border: 2px solid #ff7f50;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(172, 27, 27, 0), rgba(207, 148, 148, 0.293));
+        z-index: 1;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.btn:hover::before {
+    opacity: 1; /* Hide the gradient overlay on hover */
+}
+.main{
+    height: 100%;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    font-size: 4vw;
+    color: #000000;
+    padding: 1vw;
+    margin-top: 0.5vw;
+    font-family: bora;
+    font-weight: 800;
+}
+.box{
+    padding: 1vw 2vw;
+    width: 5vw;
+    height: 2vw;
+    display: flex;
+    font-size: 1.6vw;
+    border-radius: 10px;
+    background-color: brown;
+    margin-top: 3vw;
+    margin-left: 2vw;
+    position: relative;
+    color: #fff;
+    font-family: bora2;
+}
+.time{
+    padding: 1vw 2vw;
+    width: 5vw;
+    height: 2vw;
+    color: #fff;
+    display: flex;
+    font-size: 1.6vw;
+    border-radius: 10px;
+    background-color: brown;
+    margin-bottom: 1vw;
+    margin-top: 3vw;
+    margin-left: 4vw;
+    position: relative;
+    font-family: bora2;
+}
+
+#scoreCount{
+    font-size: 1.5vw;
+}
+.pagecontent{
+    width: 100%;
+    height: 23rem;
+    display: flex;
+    gap: 2vw;
+    margin-top: 0.2vw;
+}
+#OuterappleBox{
+    width: 50%;
+    height: 100%;
+    border: 10px rgb(181, 88, 88) solid;
+    margin-left: 4.5vw;
+    background: radial-gradient(circle at center, 
+    rgb(255, 173, 41), rgb(228, 167, 80), rgb(243, 216, 95)),100% ;
+    border-radius: 1.5vw;
+    display: none;
+}
+#InnerappleBox{
+    padding: 2vw 3vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 55%;
+    margin: auto;
+}
+#rightbox{
+    position:relative;
+    width: 30%;
+    border: 10px rgb(181, 88, 88) solid;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+    rgb(255, 173, 41), rgb(228, 167, 80), rgb(243, 216, 95)),100% ;
+    border-radius: 1.5vw;
+    display: flex;
+    gap: 2vw;
+    display: none;
+}
+.btns{
+    right: 5vw;
+    top: 13vw;
+    position: absolute;
+	padding: 1vw 1vw;
+	font-size: 1.5vw;
+	text-align: center;
+	cursor: pointer;
+    background-color: brown;
+	color: #ffff;
+	border-radius: 1vw;
+	height: 2vw;
+    border: none;
+    font-family: bora2;
+}
+.btns1{
+    right: 16vw;
+    top: 13vw;
+    position: absolute;
+	padding: 1vw 1vw;
+	font-size: 1.5vw;
+	text-align: center;
+	cursor: pointer;
+    background-color: brown;
+	border-radius: 1vw;
+	height: 2vw;
+    color: white;
+    border: none;
+    font-family: bora2;
+}
+
+.appleImgContainer{
+    height: 6vw;
+    width: 6vw;
+}
+.appleImage{
+    height: 6vw;
+    width: 6vw;
+}
+#optionContainer{
+    height: 8vw;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    border: 10px rgb(181, 88, 88) solid;
+    margin-left: 4.5vw;
+    background: radial-gradient(circle at center, 
+    rgb(255, 173, 41), rgb(228, 167, 80), rgb(243, 216, 95)),100% ;
+    border-radius: 1.5vw;
+    margin-top: 2vw;
+    display: none;
+    font-family: bora2;
+}
+#optionContainer h3{
+    font-size: 2vw;
+    color: #342b2bc9
+}
+.options{
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    color: #ffff;
+    font-size: 1.5vw;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+#gameover{
+    height: 14vw;
+    width: 25vw;
+    background-color: #bfc0c0;
+    border-radius: 1vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    padding: 2vw 3vw;
+    font-family: bora1;
+    font-size: 2vw;
+}
+#gameover:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+#gameover button{
+    padding: 0.5vw 1.5vw;
+    border: none;
+    border-radius: 1vw;
+    font-family: bora1;
+    font-size: 1.5vw;
+    color: black;
+    background-color:#bfc0c0;
+    cursor: pointer;
+    transition: background-color 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    box-shadow 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    transform 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    color 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+#gameover button:hover{
+        background-color: rgba(255, 255, 255, 0.888);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05) rotate(3deg); /* Slight rotation added */
+        color: black;
+        border: 2px solid #ff7f50;
+        
+}
+
+@media screen and (max-width:300px){
+    #OuterappleBox #rightbox #optioncontainer{
+        height: 100%;
+        width: 100%;
+    }
+    .pagecontent{
+        display:flex;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 100%;
+    }
+    .time {
+        height: 3vw;
+        width:7vw;
+        font-size: 2vw;
+    }
+    #gameover{
+        height: 120%;
+        width: 120%;
+        font-size: 5vw;
+    }
+    .appleImage{
+        height: 8vw;
+        width: 8vw;
+    }
+}

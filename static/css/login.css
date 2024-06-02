@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+background-image: url(../assets/loginAndSignup/Image/10243685.jpg);
+background-size: cover;
+background-position: center;
+height:650px; 
+width: 1200px; 
+background-color: #f0f0f0; 
+color: #fff; 
+padding: 20px; 
+position: relative;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+ }
+ .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    margin-left: 300px;
+    
+ }
+
+ .giraffe-img{
+    height: 95px;
+    width: 95px;
+    margin-left: 160px;
+    padding:0%;
+    
+ }
+ .box{
+background: hsla(80, 57%, 62%, 0.63);
+display: flex;
+flex-direction: column;
+padding: 25px 25px;
+border-radius: 20px;
+box-shadow: 0 0 128px 0 beige;
+/* border: 5px solid rgba(36, 184, 63, 0.12); */
+justify-content: center;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px); /* For Safari */
+
+/* Ensure the blurred background doesn't affect children */
+background-clip: padding-box;
+
+
+ }
+ .form-box{
+    width: 450px;
+    margin: 0px 10px;
+ }
+ .form-box h1{
+    justify-items: center;
+    font-family: cursive;
+    margin-left: 150px;
+    font-size: 40px;
+    color: rgb(25, 183, 131);
+
+ }
+ .box{
+   height: 500x;
+   width: 500px;
+   margin-top: 50px;
+ }
+ .form-box form .field-input,
+.form-box form .field-password {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+.form-box form .field-input input,
+.form-box form .field-password input {
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 5px;
+    border-radius: 7px;
+    outline: rgb(194, 194, 50);
+    background: hsla(60, 100%, 100%, 0.63);
+    border: none;
+    color: black;
+    font-family: cursive;
+
+}
+.form-box form .field-input label,
+.form-box form .field-password label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: cursive;
+    
+
+}
+.checkbox input{
+    height: 15px;
+    width: 15px;
+    padding-top: 50px ;
+}
+.checkbox{
+padding-top: 1px;
+}
+.submit input{
+    height: 43px;
+    width: 23%;
+    color: rgb(62, 136, 57);
+    background-color: rgb(64, 200, 91);
+    font-family: cursive;
+    font-size: 25px;
+    justify-content: center;
+    border-radius:13px ;
+    margin-left: 155px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 2px solid rgb(116, 226, 43);
+    box-shadow: 20px;
+}
+.form-box form .field-input label{
+    color: rgb(175, 105, 117);
+    font-size: 25px;
+    
+}
+.form-box form .field-password label {
+    color: rgb(175, 105, 117);
+    font-size: 25px;
+}
+.links p a{
+text-decoration: none;
+}
+.links{
+    margin-top: 3px;
+}
+
+
+
+
+ 
+ 
