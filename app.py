@@ -24,7 +24,7 @@ CORS(app)
 app.secret_key = 'secretKey'
 app.permanent_session_lifetime = timedelta(minutes=60)
 
-app.config["MONGO_URI"] = "mongodb+srv://paldeepesh41:"+urllib.parse.quote("Dipesh@12345")+"@cluster0.4mlnzoe.mongodb.net/kidsgame"
+app.config["MONGO_URI"] = "YOUR MONGODB CONNECTION STRING"
 
 
 db = None
